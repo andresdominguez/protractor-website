@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "homepage": "https://github.com/andresdominguez/protractor-website",
   "authors": [
-    "andres <code@karateca.com>"
+    "andres dominguez <code@karateca.com>"
   ],
   "description": "Protractor website",
   "main": "index.html",
