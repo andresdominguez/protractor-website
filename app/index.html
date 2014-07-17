@@ -33,6 +33,32 @@
     tests against your application running in a real browser, interacting with
     it as a user would.
   </p>
+  
+  <div>
+    <div>
+      You no longer need to add waits and sleeps to your test. Protractor can
+      communicate with your AngularJS app automatically and execute the next
+      step in your test the moment the webpage finishes pending tasks, so you
+      don’t have to worry about waiting for your test and webpage to sync.
+    </div>
+    <div>
+      Protractor supports Angular-specific locator strategies (i.e., binding,
+      model, repeater) as well as native WebDriver locator strategies (i.e.,
+      id, css selector, xpath). This allows you to test Angular-specific
+      elements without any setup effort on your part.
+    </div>
+    <div>
+      It is easy to set up page objects with Protractor. Protractor does not
+      execute WebDriver commands until an action is needed (i.e., get,
+      sendKeys, click). This way you can set up page objects so tests can
+      manipulate page elements without touching the HTML.
+    </div>
+    <div>
+      Protractor tests use Jasmine, the framework you use to write AngularJS
+      unit tests, and Javascript, the same language you use to write AngularJS
+      apps.
+    </div>
+  </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.15/angular.min.js"></script>
 <script src="app.js"></script>
