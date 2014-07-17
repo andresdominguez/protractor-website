@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 
 gulp.task('js', function() {
-  gulp.src(['app/js/app.js', 'app/**/*.js'])
+  gulp.src(['app/js/app.js', 'app/js/**/*.js'])
       .pipe(concat('app.js'))
       .pipe(gulp.dest('app'))
 });
