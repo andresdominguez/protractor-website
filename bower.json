@@ -1,0 +1,21 @@
+{
+  "name": "protractor-website",
+  "version": "0.0.0",
+  "homepage": "https://github.com/andresdominguez/protractor-website",
+  "authors": [
+    "andres <code@karateca.com>"
+  ],
+  "description": "Protractor website",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.20"
+  }
+}
