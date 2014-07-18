@@ -23,9 +23,12 @@ gulp.task('less', function() {
       .pipe(gulp.dest('app/css'))
 });
 
-gulp.task('watch', ['js'], function() {
+gulp.task('watch', function() {
   gulp.watch([
     'app/**/*.js',
+    'app/css/protractor.css',
     'app/css/protractor.less'
-  ], ['less', 'js', 'css'])
+  ], function() {
+    gulp.run(['less', 'css', 'js'])
+  })
 });
