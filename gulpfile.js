@@ -1,3 +1,4 @@
+var less = require('gulp-less');
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 
@@ -16,9 +17,15 @@ gulp.task('css', function() {
       .pipe(gulp.dest('app/css'))
 });
 
+gulp.task('less', function() {
+  gulp.src(['app/css/protractor.less'])
+      .pipe(less())
+      .pipe(gulp.dest('app/css'))
+});
+
 gulp.task('watch', ['js'], function() {
   gulp.watch([
     'app/**/*.js',
-    'app/css/protractor.css'
-  ], ['css', 'js'])
+    'app/css/protractor.less'
+  ], ['less', 'js', 'css'])
 });
