@@ -8,11 +8,17 @@ gulp.task('js', function() {
 });
 
 gulp.task('css', function() {
-  gulp.src(['bower_components/bootstrap/dist/css/bootstrap.min.css'])
+  gulp.src([
+    'bower_components/bootstrap/dist/css/bootstrap.min.css',
+    'app/css/protractor.css'
+  ])
       .pipe(concat('styles.css'))
       .pipe(gulp.dest('app/css'))
 });
 
 gulp.task('watch', ['js'], function() {
-  gulp.watch('src/**/*.js', ['js'])
+  gulp.watch([
+    'app/**/*.js',
+    'app/css/protractor.css'
+  ], ['css', 'js'])
 });
