@@ -160,7 +160,6 @@
       <div>
         <script src="https://gist.github.com/andresdominguez/c6dca267814122535e48.js"></script>
       </div>
-
       <p>
         The <code>describe</code> and <code>it</code> syntax is from the Jasmine
         framework. <code>browser</code> is a global created by Protractor,
@@ -171,8 +170,27 @@
         Now create the configuration file. Copy the following into
         <code>conf.js</code>:
       </p>
-
-      <script src="https://gisAdd t.github.com/andresdominguez/f29c7fb4ff0fbebf8797.js"></script>
+      <script src="https://gist.github.com/andresdominguez/f29c7fb4ff0fbebf8797.js"></script>
+    </div>
+  </div>
+  <div class="row example">
+    <div class="col-lg-8">
+      <h2>Run the test</h2>
+      <p>
+        This configuration tells Protractor where your test files
+        (<code>specs</code>) are, and where to talk to your Selenium Server 
+        (<code>seleniumAddress</code>). It will use the defaults for all other 
+        configuration. Chrome is the default browser.
+      </p>
+      <p>Now run the test with</p>
+      <pre>protractor conf.js</pre>
+      <p>
+        You should see a Chrome browser window open up and navigate to the 
+        todo list in the AngularJs page, then close itself (this should be very 
+        fast!). The test output should be
+        <code>1 test, 2 assertions, 0 failures</code>. Congratulations, you've
+        run your first Protractor test!
+      </p>
     </div>
   </div>
 </div>
