@@ -120,8 +120,8 @@
       <pre>npm install -g protractor</pre>
       <p>
         This will install two command line tools, <code>protractor</code> and
-        <code>webdriver-manager</code>. Try running protractor --version to make
-        sure it's working.
+        <code>webdriver-manager</code>. Try running
+        <code>protractor --version</code> to make sure it's working.
       </p>
       <p>
         The <code>webdriver-manager</code> is a helper tool to easily get an
@@ -141,9 +141,25 @@
         <a href="http://localhost:4444/wd/hub" target="_blank">http://localhost:4444/wd/hub</a>.
       </p>
     </div>
-
+  </div>
+  <div class="row example">
     <div class="col-lg-8">
-      <script src="https://gist.github.com/andresdominguez/c6dca267814122535e48.js"></script>
+      <h2>Write a test</h2>
+      <p>
+        Open a new command line or terminal window and create a clean folder
+        for testing.
+      </p>
+      <p>
+        Protractor needs two files to run, a spec file and a configuration file.
+      </p>
+      <p>
+        Let's start with a simple test that navigates to the todo list example
+        in the AngluarJS website and adds a new todo item to the list.
+      </p>
+      <p>Copy the following into <code>todo-spec.js</code>:</p>
+      <div>
+        <script src="https://gist.github.com/andresdominguez/c6dca267814122535e48.js"></script>
+      </div>
     </div>
   </div>
 </div>
