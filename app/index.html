@@ -112,7 +112,7 @@
   </div>
 
   <div class="row example">
-    <div class="col-lg-8">
+    <div class="col-md-8">
       <h2>Setup</h2>
       <p>
         Use npm to install Protractor globally with:
@@ -143,7 +143,7 @@
     </div>
   </div>
   <div class="row example">
-    <div class="col-lg-8">
+    <div class="col-md-8">
       <h2>Write a test</h2>
       <p>
         Open a new command line or terminal window and create a clean folder
@@ -166,23 +166,28 @@
         which is used for browser-level commands such as navigation with
         <code>browser.get</code>.
       </p>
+    </div>
+  </div>
+  <div class="row example">
+    <div class="col-md-8">
+      <h2>Configuration</h2>
       <p>
         Now create the configuration file. Copy the following into
         <code>conf.js</code>:
       </p>
       <script src="https://gist.github.com/andresdominguez/f29c7fb4ff0fbebf8797.js"></script>
+      <p>
+        This configuration tells Protractor where your test files
+        (<code>specs</code>) are, and where to talk to your Selenium Server
+        (<code>seleniumAddress</code>). It will use the defaults for all other
+        configuration. Chrome is the default browser.
+      </p>
     </div>
   </div>
   <div class="row example">
-    <div class="col-lg-8">
+    <div class="col-md-8">
       <h2>Run the test</h2>
-      <p>
-        This configuration tells Protractor where your test files
-        (<code>specs</code>) are, and where to talk to your Selenium Server 
-        (<code>seleniumAddress</code>). It will use the defaults for all other 
-        configuration. Chrome is the default browser.
-      </p>
-      <p>Now run the test with</p>
+      <p>Now run the test with:</p>
       <pre>protractor conf.js</pre>
       <p>
         You should see a Chrome browser window open up and navigate to the 
