@@ -1,8 +1,11 @@
+@protractor-red: #e23237;
+@protractor-red-dark: #b52e31;
+
 .protractor-container {
   .protractor-header {
     text-align: center;
-    margin-bottom: 90px;
-    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-top: 90px;
 
     img {
       height: 101px;
@@ -16,6 +19,12 @@
 }
 
 .github-button {
+  background-color: @protractor-red;
+
+  &:hover {
+    background-color: @protractor-red-dark;
+  }
+
   img {
     margin-right: 12px;
   }
