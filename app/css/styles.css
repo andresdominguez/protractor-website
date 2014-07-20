@@ -6,9 +6,22 @@
   margin-bottom: 50px;
   margin-top: 90px;
 }
-.protractor-container .protractor-header img {
-  height: 101px;
-  width: 450px;
+.protractor-container .protractor-header .protractor-logo {
+  display: inline-block;
+}
+@media (max-width: 500px) {
+  .protractor-container .protractor-header .protractor-logo {
+    background-image: url(../img/protractor-logo-300.png);
+    height: 67px;
+    width: 300px;
+  }
+}
+@media (min-width: 500px) {
+  .protractor-container .protractor-header .protractor-logo {
+    background-image: url(../img/protractor-logo-450.png);
+    height: 101px;
+    width: 450px;
+  }
 }
 .protractor-container .gist {
   margin: 20px 0;
