@@ -1,6 +1,7 @@
 var less = require('gulp-less');
 var gulp = require('gulp');
 var concat = require('gulp-concat');
+var minifyCSS = require('gulp-minify-css');
 
 var paths = {
   js: ['app/js/app.js', 'app/js/**/*.js'],
@@ -23,6 +24,7 @@ gulp.task('css', function() {
 gulp.task('less', function() {
   gulp.src(paths.less)
       .pipe(less())
+      .pipe(minifyCSS())
       .pipe(gulp.dest('app/css'))
 });
 
