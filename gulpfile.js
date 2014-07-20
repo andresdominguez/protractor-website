@@ -1,34 +1,35 @@
 var less = require('gulp-less');
 var gulp = require('gulp');
 var concat = require('gulp-concat');
+var minifyCSS = require('gulp-minify-css');
+
+var paths = {
+  js: ['app/js/app.js', 'app/js/**/*.js'],
+  less: ['app/css/protractor.less'],
+  css: ['app/css/protractor.css']
+};
 
 gulp.task('js', function() {
-  gulp.src(['app/js/app.js', 'app/js/**/*.js'])
+  gulp.src(paths.js)
       .pipe(concat('app.js'))
       .pipe(gulp.dest('app'))
 });
 
 gulp.task('css', function() {
-  gulp.src([
-//    'bower_components/bootstrap/dist/css/bootstrap.min.css',
-    'app/css/protractor.css'
-  ])
+  gulp.src(paths.css)
       .pipe(concat('styles.css'))
       .pipe(gulp.dest('app/css'))
 });
 
 gulp.task('less', function() {
-  gulp.src(['app/css/protractor.less'])
+  gulp.src(paths.less)
       .pipe(less())
+      .pipe(minifyCSS())
       .pipe(gulp.dest('app/css'))
 });
 
 gulp.task('watch', function() {
-  gulp.watch([
-    'app/**/*.js',
-    'app/css/protractor.css',
-    'app/css/protractor.less'
-  ], function() {
-    gulp.run(['less', 'css', 'js'])
-  })
+  gulp.watch(paths.js, ['js']);
+  gulp.watch(paths.css, ['css']);
+  gulp.watch(paths.less, ['less']);
 });
