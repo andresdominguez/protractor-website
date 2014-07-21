@@ -78,37 +78,34 @@
       <img src="app/img/GitHub-Mark-Light-32px.png" alt="github logo"/>View on GitHub
     </a>
   </div>
-  <div>
-    <a href="https://twitter.com/ProtractorTest" class="twitter-follow-button" data-show-count="false">Follow @ProtractorTest</a>
+  <div class="twitter">
+    <a href="https://twitter.com/ProtractorTest" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ProtractorTest</a>
   </div>
 
   <p>
     Protractor is an end-to-end test framework for AngularJS applications.
-    Protractor is a Node.js program built on top of WebDriverJS. Protractor runs
-    tests against your application running in a real browser, interacting with
-    it as a user would.
+    Protractor runs tests against your application running in a real browser,
+    interacting with it as a user would.
   </p>
 
   <div class="row">
     <div class="col-sm-4">
-      <h2>No waits</h2>
+      <h3>Test Like a User</h3>
+      Protractor is built on top of WebDriverJS, which uses native events
+      and browser-specific drivers to interact with your application as a user
+      would.
+    </div>
+    <div class="col-sm-4">
+      <h3>For AngularJS Apps</h3>
+      Protractor supports Angular-specific locator strategies, which allows you
+      to test Angular-specific elements without any setup effort on your part.
+    </div>
+    <div class="col-sm-4">
+      <h3>Automatic Waiting</h3>
       You no longer need to add waits and sleeps to your test. Protractor can
-      communicate with your AngularJS app automatically and execute the next
-      step in your test the moment the webpage finishes pending tasks, so you
-      don’t have to worry about waiting for your test and webpage to sync.
-    </div>
-    <div class="col-sm-4">
-      <h2>For AngularJS</h2>
-      Protractor supports Angular-specific locator strategies (i.e., binding,
-      model, repeater) as well as native WebDriver locator strategies (i.e.,
-      id, css selector, xpath). This allows you to test Angular-specific
-      elements without any setup effort on your part.
-    </div>
-    <div class="col-sm-4">
-      <h2>Jasmine</h2>
-      Protractor tests use Jasmine, the framework you use to write AngularJS
-      unit tests, and Javascript, the same language you use to write AngularJS
-      apps.
+      automatically execute the next step in your test the moment the webpage
+      finishes pending tasks, so you don’t have to worry about waiting for your
+      test and webpage to sync.
     </div>
   </div>
 
@@ -137,8 +134,8 @@
       <p>
         This will start up a Selenium Server and will output a bunch of info
         logs. Your Protractor test will send requests to this server to control
-        a local browser. Leave this server running throughout the tutorial. You
-        can see information about the status of the server at
+        a local browser. You can see information about the status of the server
+        at
         <a href="http://localhost:4444/wd/hub" target="_blank">http://localhost:4444/wd/hub</a>.
       </p>
     </div>
@@ -196,6 +193,14 @@
         fast!). The test output should be
         <code>1 test, 2 assertions, 0 failures</code>. Congratulations, you've
         run your first Protractor test!
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Learn More</h2>
+      <p>Learn more with
+        <a href="https://github.com/angular/protractor/blob/master/docs/tutorial.md">the tutorial</a>.
       </p>
     </div>
   </div>
