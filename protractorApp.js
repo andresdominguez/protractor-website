@@ -7,14 +7,15 @@ angular.module('protractorApp', ['ngRoute']);
    * Controller for the protractor api view.
    *
    * @constructor
+   * @ngInject
    * @param $http HTTP service.
-   * @param $location Location service.
+   * @param $route Route service.
    * @param $sce Strict Contextual Escaping service.
    * @param $scope Angular scope.
    */
-  var ApiCtrl = function($http, $location, $sce, $scope) {
+  var ApiCtrl = function($http, $route, $sce, $scope) {
     this.$http = $http;
-    this.$location = $location;
+    this.$route = $route;
     this.$scope = $scope;
 
     this.loadTableOfContents();
@@ -37,7 +38,7 @@ angular.module('protractorApp', ['ngRoute']);
 
     $scope.showElement = function(item) {
       // Update the query string with the view name.
-      $location.search('view', item.name);
+      $route.current.params.view = item.name;
       $scope.currentItem = item;
     };
 
@@ -53,7 +54,7 @@ angular.module('protractorApp', ['ngRoute']);
       // Does it come with a type? Types come escaped as [theType].
       var match = html.match(/.*(\[(.*)\]).*/);
       if (match) {
-        var link = '<a href="#/api?view=' + match[2] + '">' + match[2] + '</a>';
+        var link = '<a href="#/api/' + match[2] + '">' + match[2] + '</a>';
         html = html.replace(match[1], link);
       }
 
@@ -81,7 +82,7 @@ angular.module('protractorApp', ['ngRoute']);
       $scope.version = data.version;
 
       // Show the view if is defined in the query string.
-      var view = self.$location.search().view;
+      var view = self.$route.current.params.view;
       if (view) {
         items.forEach(function(item) {
           if (view === item.name) {
@@ -366,9 +367,58 @@ angular.module('protractorApp').config(function($routeProvider) {
       when('/', {
         templateUrl: 'partials/home.html'
       }).
+      when('/api/:view', {
+        templateUrl: 'partials/api.html',
+        controller: 'ApiCtrl'
+      }).
       when('/api', {
         templateUrl: 'partials/api.html',
         controller: 'ApiCtrl'
+      }).
+      when('/api-overview', {
+        templateUrl: 'partials/api-overview.html'
+      }).
+      when('/browser-setup', {
+        templateUrl: 'partials/browser-setup.html'
+      }).
+      when('/control-flow', {
+        templateUrl: 'partials/control-flow.html'
+      }).
+      when('/debugging', {
+        templateUrl: 'partials/debugging.html'
+      }).
+      when('/faq', {
+        templateUrl: 'partials/faq.html'
+      }).
+      when('/frameworks', {
+        templateUrl: 'partials/frameworks.html'
+      }).
+      when('/getting-started', {
+        templateUrl: 'partials/getting-started.html'
+      }).
+      when('/infrastructure', {
+        templateUrl: 'partials/infrastructure.html'
+      }).
+      when('/locators', {
+        templateUrl: 'partials/locators.html'
+      }).
+      when('/page-objects', {
+        templateUrl: 'partials/page-objects.html'
+      }).
+      when('/protractor-setup', {
+        templateUrl: 'partials/protractor-setup.html'
+      }).
+      when('/server-setup', {
+        templateUrl: 'partials/server-setup.html'
+      }).
+      when('/system-setup', {
+        templateUrl: 'partials/system-setup.html'
+      }).
+      when('/timeouts', {
+        templateUrl: 'partials/timeouts.html'
+      }).
+      when('/tutorial', {
+        templateUrl: 'partials/tutorial.html'
       }).
       otherwise({
         redirectTo: '/'
